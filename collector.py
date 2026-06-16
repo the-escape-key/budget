@@ -22,5 +22,10 @@ def fetch_and_save():
     except Exception as e:
         print(f"Error occurred: {e}")
 
+def append_time():
+    timestamp = datetime.datetime.now().isoformat()
+    with open('data.txt', 'a') as f:
+        f.write(f'{timestamp}\n')
+
 if __name__ == "__main__":
-    fetch_and_save()
+    append_time()
